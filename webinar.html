@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+  <title>Webinars</title>
+  <style>
+    .video-gallery-container {
+      width: 1020px;
+      font-family: "Roboto", sans-serif;
+    width: 100%;
+      padding: 8px 0 0 0;
+      margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .video-gallery-container,
+    .video-gallery-container * {
+      box-sizing: border-box;
+    }
+
+    .video-gallery-container h2.title {
+      text-align: center;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 34px;
+      margin-bottom: 24px;
+      color: whitesmoke;
+    }
+
+    .video-gallery-container .video-gallery {
+      display: flex;
+      background: #02151e;
+      justify-content: center;
+      padding: 18px;
+      padding-top: 24px;
+      gap: 24px;
+      margin-top: 4rem;
+      color: #fff;
+      align-items: center;
+    }
+
+    .video-gallery h3.video-title {
+      line-height: 1.6;
+      font-weight: 700;
+      font-size: 30px;
+      width: 100%;
+
+    }
+
+    .video-gallery .thumbnail {
+      height: 120px;
+      cursor: pointer;
+    }
+
+    .video-gallery .video {
+      position: relative;
+    }
+
+    .video-gallery .video:hover .play-icon {
+      opacity: 1;
+    }
+
+    .video-gallery .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 400ms ease;
+    }
+
+    .video-gallery-container h2.title {
+      width: 100%;
+      display: flex;
+      font-size: 40px;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      margin-right: 1rem;
+    }
+
+    .video-gallery .video .play-icon img {
+      height:110px;
+      width:110px;
+    }
+
+    .video-gallery .all-videos {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .video-gallery .responsive-iframe {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      padding-top: 56.25%;
+      padding-bottom: 30px;
+    }
+
+    .video-gallery .responsive-iframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      text-align: center;
+
+    }
+
+    @media (max-width: 1024px) {
+      .video-gallery-container {
+        width: 100%;
+        height: 100vh;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .video-gallery-container {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .video-gallery-container .video-gallery {
+        flex-direction: column;
+       
+      }
+     
+      .video-gallery .all-videos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       justify-content: center;
+       width: 100%;
+       align-items: center;
+      }
+      .all-videos {
+      overflow-y: scroll;
+      height: 380px;
+      max-width: 450px;
+    }
+      .video-gallery .thumbnail {
+        height: unset;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .video-gallery .all-videos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .video-gallery-container {
+      max-width: 500px;
+      }
+
+      .video-gallery-container h3.title {
+        font-size: 24px;
+        font-weight: bold;
+        width: 100%;
+      }
+
+      .video-title {
+        font-size: 10px;
+      }
+    }
+
+    .all-videos {
+      overflow-y: scroll;
+      height: 380px;
+      max-width: 350px;
+    }
+
+    #heading {
+      color: black;
+      text-transform: capitalize;
+      background-color: gray;
+      font-size: 20px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      justify-content: center;
+    }
+   .head4{
+    font-size: 20px;
+    padding-right: 3rem
+    
+   }
+   @media (max-width:500px) {
+    .head4{
+      font-size: 20px;
+      width: 100%;
+      display: flex;
+    
+      padding-right: 2rem;
+    }
+    body{
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+   }
+   }
+   body{
+    overflow: hidden;
+   }
+ 
+
+  </style>
+</head>
+
+<body>
+  
+
+
+  <div class="logo">
+    <a href="#"><span style="color: black; font-size: 40px;">OBGYNI</span><span style="color:red ; font-size: 40px ;"> NSIGHT </span></a>
+ </div>
+<header class="header">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            
+            <button type="button" class="nav-toggler">
+              <span style="margin-top:-0.8rem;"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <nav class="nav">
+              <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="webinar.html">Webinars</a></li>
+                <li><a href="educationvido.html">Educational video</a></li>
+                <li><a href="index.html">Conditions</a></li>
+                <li><a href="#">Contact</a></li>
+             
+             </ul>
+            </nav>
+        </div>
+    </div>
+ </header>
+
+
+  
+
+  <!-- videstart from here -->
+  
+
+  <div class="video-gallery-container">
+   
+
+    <div class="video-gallery">
+      <div class="featured-video">
+        <div class="responsive-iframe">
+          <iframe width="460" height="350" src="https://www.youtube.com/embed/ng4OPHtTLM0" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+
+        <h2  class="video-title head4">
+          Preventive Vaccination in Cervical Cancer | Jagsonpal Medical Insights
+        </h2>
+      </div>
+
+      <div class="all-videos">
+        <div class="video">
+          <img class="thumbnail" data-id="tjioOc-HdLY" data-title="Fetal Growth Restriction ||   Jagsonpal Medical Insights"
+             src="pre2.jpeg" alt="" />
+          <h4 id="heading">Fetal Growth Restriction</h4>
+
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+
+        <div class="video">
+          <img class="thumbnail" data-id="sOPBVaFEQdk" data-title="NMC bill draft suggestions 
+              Jagsonpal Medical Insights
+             " src="preg6.jpg" alt="" />
+          <h4 id="heading">NMC bill draft suggestions|</h4>
+
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+
+        <div class="video">
+          <img class="thumbnail" data-id="ng4OPHtTLM0"
+            data-title="Preventive Vaccination in Cervical Cancer |Jagsonpal Medical Insights" src="meno2.webp"
+            alt="" />
+          <h4 id="heading">Preventive Vaccination in Cervical Cancer
+          
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+
+        <div class="video">
+          <img class="thumbnail" data-id="bymX9lp40F0" data-title="Know about NMC bill
+
+              Jagsonpal Medical Insights" src="preg9.webp" alt="" />
+          <h4 id="heading">Know about NMC bill|
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+        <div class="video">
+          <img class="thumbnail" data-id="ICnwWWjDYko" data-title="Research Methodology |
+ 
+              Jagsonpal Medical Insights" src="meno2.webp" alt="" />
+          <h4 id="heading">Research Methodology
+            |
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+        <div class="video">
+          <img class="thumbnail" data-id="43QKHZ0Imhc" data-title="Demystifying Hypothyroidism in Women
+              | 
+              Jagsonpal Medical Insights" src="medical.jpg" alt="" />
+          <h4 id="heading">Demystifying Hypothyroidism in Women
+            |
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+        <div class="video">
+          <img class="thumbnail" data-id="urCNfIw4HZ8" data-title="Challenges of NCD
+              | 
+              Jagsonpal Medical Insights" src="meno5.jfif" alt="" />
+          <h4 id="heading">Challenges of NCD
+            |
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+        <div class="video">
+          <img class="thumbnail" data-id="QsnfWsNe8_U" data-title="Yuliprist 5mg - re-approval of UPA by DCGI
+              | 
+              Jagsonpal Medical Insights" src="meno1.png" alt="" />
+          <h4 id="heading">Yuliprist 5mg - re-approval of UPA by DCGI
+            |
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+        <div class="video">
+          <img class="thumbnail" data-id="_sufcTGbAqA" data-title="LSCS revisited - Sailing Through Complications
+              | 
+              Jagsonpal Medical Insights" src="meno3.jfif" alt="" />
+          <h4 id="heading">LSCS revisited - Sailing Through Complications
+            |
+          </h4>
+          <div class="play-icon">
+            <img src="yt-removebg-preview.png" alt="" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <body>
+
+
+
+    <script>
+       const navToggler = document.querySelector(".nav-toggler"); 
+  navToggler.addEventListener("click", navToggle);
+  function navToggle() 
+  { navToggler.classList.toggle("active");
+   const nav = document.querySelector(".nav");
+    nav.classList.toggle("open");
+     if(nav.classList.contains("open")){ nav.style.maxHeight = nav.scrollHeight + "px"; }
+ else{ nav.removeAttribute("style"); } }
+
+ const videoThumbnails = document.querySelectorAll(
+  ".video-gallery .all-videos .thumbnail"
+);
+const videoPlayer = document.querySelector(
+  ".video-gallery .featured-video iframe"
+);
+const videoTitle = document.querySelector(".video-gallery .video-title");
+
+const showVideo = (videoId, title) => {
+  let videoUrl = `https://www.youtube.com/embed/${videoId}?rel=0`;
+  videoPlayer.setAttribute("src", videoUrl);
+  videoTitle.innerHTML = title;
+};
+
+videoThumbnails.forEach((v) => {
+  v.addEventListener("click", () => {
+    showVideo(v.dataset.id, v.dataset.title);
+  });
+});
+    </script>
+
+</html>
